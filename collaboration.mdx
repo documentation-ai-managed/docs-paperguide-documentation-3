@@ -1,0 +1,89 @@
+---
+title: Collaboration
+description: Guide to inviting users, sharing pages, and working together in Paperguide
+---
+
+## Inviting Team Members
+
+You invite collaborators to your Paperguide projects to enable joint editing and feedback. Set roles like viewer, editor, or admin to control permissions precisely. Start by accessing the project settings to manage access.
+
+<Steps>
+  <Step title="Access Settings" icon="settings">
+    Open your project and navigate to the members tab in settings.
+  </Step>
+  <Step title="Invite Users" icon="mail">
+    Enter email addresses and select roles. Send invitations with a custom message.
+  </Step>
+  <Step title="Manage Permissions" icon="shield">
+    Adjust access levels: viewers read-only, editors can modify, admins manage everything.
+  </Step>
+</Steps>
+
+<Callout kind="alert">
+  Only invite trusted users, as editors can alter content. Review changes regularly.
+</Callout>
+
+## Real-Time Editing
+
+Collaborate live with multiple users on the same page. Changes appear instantly, with cursors showing who edits what section.
+
+<Columns cols={2}>
+  <Card title="Live Cursors" icon="mouse-pointer" href="#">
+    See team members' positions and edits in real-time.
+  </Card>
+  <Card title="Commenting" icon="message-square" href="#">
+    Add inline comments for feedback without altering text.
+  </Card>
+</Columns>
+
+````jsx
+<Tabs>
+  <Tab title="Editor View" icon="edit">
+    ````javascript
+    // Collaborators see shared edits
+    const doc = new PaperguideDoc();
+    doc.on('change', (event) => {
+      console.log(`${event.user} updated section`);
+    });
+    ````
+  </Tab>
+  <Tab title="Comments Panel" icon="message-circle">
+    ````jsx
+    <CommentsPanel>
+      <Comment author="Alice" time="Now">
+        Suggestion: Add more examples here.
+      </Comment>
+    </CommentsPanel>
+    ````
+  </Tab>
+</Tabs>
+````
+
+## Sharing and Permissions
+
+Share specific pages or entire projects via links with expiration dates. Embed pages in external sites for broader access.
+
+<Expandable title="Sharing Options" default-open="false">
+  Generate shareable links with view or edit permissions. Track usage analytics to see who accesses your docs.
+</Expandable>
+
+<Tabs>
+  <Tab title="Project Share" icon="share-2">
+    Share the whole project for team access. Set password protection if needed.
+  </Tab>
+  <Tab title="Page Share" icon="link">
+    Share individual pages for targeted collaboration, like reviews.
+  </Tab>
+</Tabs>
+
+## Workflow Best Practices
+
+Establish guidelines for your team, such as using comments for suggestions and @mentions for notifications. Use version history to resolve conflicts by reverting if needed.
+
+| Role | Capabilities | Best For |
+|------|--------------|----------|
+| Viewer | Read only | Reviewers |
+| Editor | Modify content | Contributors |
+| Admin | Full control | Project leads |
+
+Integrate with Slack or email for notifications on changes. This fosters efficient teamwork, ensuring your documentation reflects collective input while maintaining quality and security. Paperguide's collaboration features scale with team size, supporting from small groups to large organizations.

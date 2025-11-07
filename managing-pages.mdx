@@ -1,0 +1,102 @@
+---
+title: Managing Pages
+description: Learn how to create, edit, organize, and maintain pages in Paperguide effectively
+---
+
+## Creating Pages
+
+You create new pages directly within your project to build out your documentation structure. The editor provides tools for rich content, including text, images, and code snippets. Start by outlining your hierarchy before adding details.
+
+<Steps>
+  <Step title="New Page" icon="plus">
+    Right-click in the sidebar or use the add button. Enter a title and select a parent folder if needed.
+  </Step>
+  <Step title="Edit Content" icon="edit">
+    Switch to the editor view. Use the toolbar for formatting: bold, lists, headings, and links.
+  </Step>
+  <Step title="Preview and Publish" icon="eye">
+    Click preview to check rendering. Save or publish to make it live for viewers.
+  </Step>
+</Steps>
+
+<Callout kind="success">
+  Pages auto-save every `30 seconds`, preventing data loss during editing sessions.
+</Callout>
+
+## Organizing Structure
+
+Maintain a clear hierarchy by using folders and reordering pages. Drag and drop to nest content logically, improving navigation for users.
+
+````jsx
+<Columns cols={2}>
+  <Card title="Reorder Pages" icon="move" href="#">
+    Drag pages up or down in the sidebar to set order.
+  </Card>
+  <Card title="Folder Management" icon="folder" href="#">
+    Create folders to group related pages, like tutorials or references.
+  </Card>
+</Columns>
+````
+
+You archive inactive pages to keep the active structure clean. Search functionality helps locate buried content quickly.
+
+<Tabs>
+  <Tab title="Visual Editor" icon="edit-3">
+    ````jsx
+    <div>
+      <h2>Sample Heading</h2>
+      <p>Rich text with inline styles.</p>
+      <ul>
+        <li>Bullet point</li>
+      </ul>
+    </div>
+    ````
+  </Tab>
+  <Tab title="Markdown Editor" icon="code">
+    ````markdown
+    ## Sample Heading
+    Rich text with inline styles.
+    - Bullet point
+    ````
+  </Tab>
+</Tabs>
+
+## Version Control
+
+Paperguide tracks every edit, allowing you to view history and revert changes. Access versions via the page menu to compare diffs or restore previous states.
+
+<ExpandableGroup>
+  <Expandable title="How to Revert a Change?" default-open="true">
+    Select the page, click history, choose a version, and click restore. This undoes specific edits without affecting others.
+  </Expandable>
+  <Expandable title="Export Versions">
+    Download historical snapshots as Markdown or PDF for backups.
+  </Expandable>
+</ExpandableGroup>
+
+## Advanced Editing
+
+Embed media and components to enhance pages. Insert images with alt text for accessibility, and add code blocks for technical content.
+
+````markdown
+```javascript
+// Example code for API call
+const response = await fetch('/api/docs', {
+  method: 'GET',
+  headers: { 'Authorization': `Bearer ${token}` }
+});
+const data = await response.json();
+console.log(data);
+```
+```
+````
+
+Use tables for comparisons:
+
+| Action | Shortcut | Description |
+|--------|----------|-------------|
+| Save | Ctrl+S | Quick save draft |
+| Preview | Ctrl+P | View rendered page |
+| Insert Image | Ctrl+I | Add media |
+
+Troubleshoot common issues like broken links by validating URLs in the editor. Regularly review your structure to ensure usability. With these tools, you manage dynamic documentation that evolves with your project needs, keeping everything organized and accessible.
